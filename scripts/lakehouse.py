@@ -91,8 +91,13 @@ def reset_catalog(name: str = "lab") -> None:
 
     Scoped to `name` on purpose — see `_catalog_dir`.
     """
+    import gc
     import shutil
 
+    # SqlCatalog's SQLite connection can survive briefly after a discarded
+    # catalog object. Windows locks the database file while that happens;
+    # collect it before removing the per-notebook catalog directory.
+    gc.collect()
     shutil.rmtree(_catalog_dir(name), ignore_errors=True)
 
 

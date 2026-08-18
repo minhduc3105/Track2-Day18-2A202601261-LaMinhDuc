@@ -1,6 +1,6 @@
 # Day 18 Lakehouse Lab — lightweight (default) path.
 # Pure Python: no JVM, no Docker, no cloud account, no API key.
-# Total install ~180 MB. Works on Python 3.10 – 3.14 (all wheels verified 2026-08).
+# Total install ~180 MB. Works on Python 3.10 – 3.13 (all wheels available).
 #
 # Lower-bound pins keep the lab reproducible; upper bounds are major-version
 # guards only, so a student on a fresh machine still gets working wheels.
